@@ -1,0 +1,37 @@
+<div class="text-center text-xl">
+  <h1 class="">LIVE CHAT</h1>
+</div>
+<div class="">
+  <!--//? Cargar el chat, con un for, con while-->
+  @for (mensaje of chat; track mensaje.msj) { @if (mensaje.tipo==='recibido') {
+  <h1 class="text-info text-end">{{ mensaje.msj }}</h1>
+  } @else if (mensaje.tipo==='enviado') {
+  <h1 class="text-info-emphasis">{{ mensaje.msj }}</h1>
+  } }
+</div>
+<div class="text-center">
+  <div class="input-group">
+    <input
+      id="mensaje"
+      type="text"
+      name="mensaje"
+      class="form-control"
+      aria-label="chat"
+    />
+    <button (click)="sendMessage()" type="button" class="btn btn-primary">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="currentColor"
+        class="bi bi-arrow-up-square-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+<div class="text-center"></div>
